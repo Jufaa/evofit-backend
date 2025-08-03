@@ -6,7 +6,7 @@ export class DeleteExerciseInRoutineUseCase {
   }
   async execute(routine_id: number, exercise_id: number): Promise<boolean> {
     return await this.routineExerciseRepository.deleteExerciseInRoutine(
-      routine_id, 
+      routine_id,
       exercise_id,
     );
   }

@@ -57,7 +57,7 @@ const asyncHandler =
  *       400:
  *         description: Error en la validación
  */
-  
+
 router.post(
   '/register',
   asyncHandler(userController.createUser.bind(userController)),

@@ -3,4 +3,15 @@ import { User } from './User';
 import { RoutineExercise } from './Routine_exercises';
 import { SubMuscle } from './Submuscle';
 import { Exercise } from './Exercises';
-export { Exercise, Routine, User, RoutineExercise, SubMuscle };
+import { UserChat } from './UserChat';
+import { Message } from './Message';
+
+export {
+  Exercise,
+  Routine,
+  User,
+  RoutineExercise,
+  SubMuscle,
+  UserChat,
+  Message,
+};

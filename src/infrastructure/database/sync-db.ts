@@ -7,6 +7,9 @@ import { RoutinesSchema } from '@infrastructure/schemas/Routines-schema';
 import { RoutineExercisesSchema } from '@infrastructure/schemas/RoutinesExercises-schema';
 import { SubMuscleSchema } from '@infrastructure/schemas/SubMuscle-schema';
 import { UsersSchema } from '@infrastructure/schemas/User-schemas';
+import { UserChatSchema } from '@infrastructure/schemas/UserChat-schema';
+import { UserChatParticipantsSchema } from '@infrastructure/schemas/UserChatParticipant-schema';
+import { UserMessageSchema } from '@infrastructure/schemas/UserMessage-schema';
 import { Sequelize } from 'sequelize-typescript';
 import config from 'shared/utils/config';
 
@@ -22,6 +25,9 @@ export const sequelize = new Sequelize({
     RoutineExercisesSchema,
     SubMuscleSchema,
     UsersSchema,
+    UserChatSchema,
+    UserChatParticipantsSchema,
+    UserMessageSchema,
   ],
   logging: console.log,
 });

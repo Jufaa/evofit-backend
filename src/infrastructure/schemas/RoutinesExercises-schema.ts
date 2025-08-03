@@ -23,7 +23,7 @@ export class RoutineExercisesSchema extends Model {
   @AllowNull(false)
   @Column(DataType.INTEGER)
   declare exercise_id: number;
-  
+
   @AllowNull(false)
   @Column(DataType.INTEGER)
   declare sets: number;
@@ -35,5 +35,4 @@ export class RoutineExercisesSchema extends Model {
   @AllowNull(false)
   @Column(DataType.FLOAT)
   declare weight: number;
-
 }

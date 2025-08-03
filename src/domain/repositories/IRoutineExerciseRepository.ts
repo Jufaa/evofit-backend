@@ -13,7 +13,10 @@ export interface IRoutineExerciseRepository {
     reps: number,
     weight: number,
   ): Promise<RoutineExercise>;
-  deleteExerciseInRoutine(routine_id: number, exercise_id: number): Promise<boolean>;
+  deleteExerciseInRoutine(
+    routine_id: number,
+    exercise_id: number,
+  ): Promise<boolean>;
   editRoutineExercise(
     routine_id: number,
     exercise_id: number,

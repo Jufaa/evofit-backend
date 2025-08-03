@@ -55,6 +55,6 @@ const server = app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-syncDatabase()
+syncDatabase();
 // Export both the app and the server for testing later
 export { app, server };

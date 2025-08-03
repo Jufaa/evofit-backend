@@ -41,18 +41,21 @@ export class SequalizeRoutineRepository implements IRoutineRepository {
     return routines.map((routine) => this.toDomain(routine));
   }
 
-  async editRoutineById(routine_id: number, updateDate: {
-    name?: string,
-    weeks?: number,
-    days?: number,
-  }){
+  async editRoutineById(
+    routine_id: number,
+    updateDate: {
+      name?: string;
+      weeks?: number;
+      days?: number;
+    },
+  ) {
     await RoutinesSchema.update(updateDate, {
-      where: {routine_id}
-    })
+      where: { routine_id },
+    });
     const updated = await RoutinesSchema.findOne({
       where: { routine_id },
-    })
-    if(!updated) throw new Error('Routine not found');
+    });
+    if (!updated) throw new Error('Routine not found');
     return this.toDomain(updated);
   }
   async getRoutineById(routineId: number): Promise<Routine | null> {

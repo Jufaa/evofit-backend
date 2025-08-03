@@ -12,7 +12,6 @@ const router = Router();
 // Inyección de dependencias
 const routineRepository = new SequalizeRoutineRepository();
 
-
 const routineController = new RoutineController(
   new CreateRoutineUseCase(routineRepository),
   new DelRoutineUseCase(routineRepository),
@@ -55,7 +54,6 @@ router.get(
   }),
 );
 
-
 /**
  * @swagger
  * /routines/create:
@@ -88,7 +86,6 @@ router.get(
  *       400:
  *         description: Faltan campos requeridos
  */
-
 
 router.post(
   '/create',
@@ -179,10 +176,11 @@ router.delete(
  *         description: Rutina no encontrada
  */
 
-router.put('/edit/:routineId',
+router.put(
+  '/edit/:routineId',
   asyncHandler(async (req: Request, res: Response) => {
     await routineController.editRoutineById(req, res);
-  })
-)
+  }),
+);
 
 export default router;

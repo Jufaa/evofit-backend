@@ -17,6 +17,5 @@ export class RoutineExercise {
     this.sets = sets;
     this.reps = reps;
     this.weight = weight;
-
   }
 }

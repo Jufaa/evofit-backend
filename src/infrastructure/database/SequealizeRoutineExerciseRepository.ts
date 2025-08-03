@@ -50,7 +50,7 @@ export class SequalizeRoutineExerciseRepository
       weight?: number;
     },
   ) {
-     await RoutineExercisesSchema.update(updatedData, {
+    await RoutineExercisesSchema.update(updatedData, {
       where: { routine_id, exercise_id },
     });
 
@@ -65,10 +65,9 @@ export class SequalizeRoutineExerciseRepository
     return this.toDomain(updated);
   }
 
-
   async deleteExerciseInRoutine(routine_id: number, exercise_id: number) {
     const deletedRows = await RoutineExercisesSchema.destroy({
-      where: { routine_id, exercise_id},
+      where: { routine_id, exercise_id },
     });
     if (deletedRows === 0) {
       throw new Error('Exercise not found in the routine');

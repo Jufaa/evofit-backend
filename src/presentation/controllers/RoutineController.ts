@@ -12,7 +12,7 @@ export class RoutineController {
     private delRoutineUseCase: DelRoutineUseCase,
     private getAllRoutinesByUserIdUseCase: GetAllRoutinesByUserIdUseCase,
     private getRoutineByIdUseCase: GetRoutineByIdUseCase,
-    private editRoutineByIdUseCase: EditRoutineByIdUseState
+    private editRoutineByIdUseCase: EditRoutineByIdUseState,
   ) {
     this.createRoutineUseCase = createRoutineUseCase;
     this.delRoutineUseCase = delRoutineUseCase;
@@ -56,7 +56,6 @@ export class RoutineController {
       res.status(200).json({ message: 'Routine deleted successfully' });
     } catch {
       return res.status(404).json({ message: 'Routine not found' });
-      
     }
   }
 
@@ -70,7 +69,6 @@ export class RoutineController {
     if (!updatedRoutine) {
       return res.status(404).json({ message: 'Routine not found' });
     }
-    res.status(200).json(updatedRoutine); 
-    
+    res.status(200).json(updatedRoutine);
   }
 }

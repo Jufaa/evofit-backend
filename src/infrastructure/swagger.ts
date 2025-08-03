@@ -17,7 +17,11 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: ['./src/index/**/*.ts', './src/infrastructure/routes/**/*.ts', './src/presentation/controllers/**/*.ts'], // rutas de tus archivos con anotaciones
+  apis: [
+    './src/index/**/*.ts',
+    './src/infrastructure/routes/**/*.ts',
+    './src/presentation/controllers/**/*.ts',
+  ], // rutas de tus archivos con anotaciones
 };
 
 const swaggerSpec = swaggerJSDoc(options);

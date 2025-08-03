@@ -60,6 +60,7 @@
     "reflect-metadata": "^0.2.2",
     "sequelize": "^6.37.6",
     "sequelize-typescript": "^2.1.6",
+    "socket.io": "^4.8.1",
     "supertest": "^7.0.0",
     "swagger-ui-express": "^5.0.1",
     "winston": "^3.17.0"
@@ -73,6 +74,7 @@
     "@types/jest": "^29.5.14",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.13.10",
+    "@types/socket.io": "^3.0.1",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "@types/validator": "^13.12.2",

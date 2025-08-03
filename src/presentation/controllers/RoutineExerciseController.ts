@@ -36,7 +36,7 @@ export class RoutineExerciseController {
       if (!newRoutineExercise) {
         return res.status(400).json({ message: 'Invalid data provided' });
       }
-      
+
       return res.status(200).json(newRoutineExercise);
     } catch (error) {
       return res.status(404).json({ message: (error as Error).message });
@@ -59,13 +59,15 @@ export class RoutineExerciseController {
     }
   }
 
-
-// TODO: Deberia ser elminar un ejercicio de rutina exercise por id
+  // TODO: Deberia ser elminar un ejercicio de rutina exercise por id
   async deleteExerciseInRoutine(req: Request, res: Response) {
     try {
       const routine_id = Number(req.params.routineId);
       const exercise_id = Number(req.params.exerciseId);
-      await this.deleteExerciseInRoutineUseCase.execute(routine_id, exercise_id);
+      await this.deleteExerciseInRoutineUseCase.execute(
+        routine_id,
+        exercise_id,
+      );
 
       return res.status(200).json({ message: 'Exercise deleted successfully' });
     } catch (error) {

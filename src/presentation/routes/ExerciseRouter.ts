@@ -25,15 +25,15 @@ const asyncHandler =
 
 {
   /**
- * @swagger
- * /exercises/all:
- *   get:
- *     summary: Obtener todos los ejercicios
- *     tags: [Exercises]
- *     responses:
- *       200:
- *         description: Lista de ejercicios
- */
+   * @swagger
+   * /exercises/all:
+   *   get:
+   *     summary: Obtener todos los ejercicios
+   *     tags: [Exercises]
+   *     responses:
+   *       200:
+   *         description: Lista de ejercicios
+   */
 
   router.get(
     '/all',
@@ -43,23 +43,23 @@ const asyncHandler =
   );
 
   /**
- * @swagger
- * /exercises/all/{main_muscle_id}:
- *   get:
- *     summary: Obtener ejercicios por músculo principal
- *     tags: [Exercises]
- *     parameters:
- *       - in: path
- *         name: main_muscle_id
- *         required: true
- *         schema:
- *           type: integer
- *     responses:
- *       200:
- *         description: Lista de ejercicios
- *       404:
- *         description: No se encontraron ejercicios
- */
+   * @swagger
+   * /exercises/all/{main_muscle_id}:
+   *   get:
+   *     summary: Obtener ejercicios por músculo principal
+   *     tags: [Exercises]
+   *     parameters:
+   *       - in: path
+   *         name: main_muscle_id
+   *         required: true
+   *         schema:
+   *           type: integer
+   *     responses:
+   *       200:
+   *         description: Lista de ejercicios
+   *       404:
+   *         description: No se encontraron ejercicios
+   */
 
   router.get(
     '/all/:main_muscle_id',

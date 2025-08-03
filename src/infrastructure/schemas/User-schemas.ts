@@ -8,8 +8,12 @@ import {
   Unique,
   HasMany,
   Model,
+  BelongsToMany,
 } from 'sequelize-typescript';
 import { RoutinesSchema } from './Routines-schema';
+import { UserChatSchema } from './UserChat-schema';
+import { UserChatParticipantsSchema } from './UserChatParticipant-schema';
+import { UserMessageSchema } from './UserMessage-schema';
 
 @Table({ tableName: 'users', timestamps: false })
 export class UsersSchema extends Model {
@@ -49,4 +53,10 @@ export class UsersSchema extends Model {
 
   @HasMany(() => RoutinesSchema)
   declare routines?: RoutinesSchema[];
+
+  @BelongsToMany(() => UserChatSchema, () => UserChatParticipantsSchema)
+  declare userChats?: UserChatSchema[];
+
+  @HasMany(() => UserMessageSchema)
+  declare sentMessages?: UserMessageSchema[];
 }

@@ -3,6 +3,7 @@ import { IUserRepository } from '../../domain/repositories/IUserRepository';
 import { Op } from 'sequelize';
 import { User } from '../../domain/entities/User';
 import bcrypt from 'bcryptjs';
+import { userSchemaToDomain } from './utils';
 
 export class SequalizeUserRepository implements IUserRepository {
   async checkUserExists(username: string): Promise<boolean> {
@@ -58,22 +59,13 @@ export class SequalizeUserRepository implements IUserRepository {
   }
 
   async getUserById(userId: number): Promise<User | null> {
-    const user = await UsersSchema.findByPk(userId);
+    const user = await UsersSchema.findByPk(userId, {
+      include: ['routines'],
+    });
     return user ? this.toDomain(user) : null;
   }
 
-  // Métodos auxiliares para convertir entre esquemas y entidades de dominio
   private toDomain(userSchema: UsersSchema): User {
-    return new User(
-      userSchema.email,
-      userSchema.password,
-      userSchema.username,
-      userSchema.firstName,
-      userSchema.lastName,
-      userSchema.role as 'admin' | 'user',
-      userSchema.birthdate, // Si birthdate está definido en UsersSchema
-      userSchema.user_id,
-      [], // Puedes mapear `routines` aquí si es necesario
-    );
+    return userSchemaToDomain(userSchema);
   }
 }
