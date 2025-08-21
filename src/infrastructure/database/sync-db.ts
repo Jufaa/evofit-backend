@@ -2,7 +2,6 @@
 import { ExercisesSchema } from '@infrastructure/schemas/Exercises-schema';
 import { ExerciseSubMuscleSchema } from '@infrastructure/schemas/ExersiceSubMuscle-schema';
 import { MainMuscleSchema } from '@infrastructure/schemas/MainMuscle-schema';
-import { RoutineExerciseDetailSchema } from '@infrastructure/schemas/RoutineExerciseDetail-schema';
 import { RoutinesSchema } from '@infrastructure/schemas/Routines-schema';
 import { RoutineExercisesSchema } from '@infrastructure/schemas/RoutinesExercises-schema';
 import { SubMuscleSchema } from '@infrastructure/schemas/SubMuscle-schema';
@@ -12,6 +11,10 @@ import { UserChatParticipantsSchema } from '@infrastructure/schemas/UserChatPart
 import { UserMessageSchema } from '@infrastructure/schemas/UserMessage-schema';
 import { Sequelize } from 'sequelize-typescript';
 import config from 'shared/utils/config';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 export const sequelize = new Sequelize({
   ...config.getDataBaseConfig(),
@@ -20,7 +23,6 @@ export const sequelize = new Sequelize({
     ExercisesSchema,
     ExerciseSubMuscleSchema,
     MainMuscleSchema,
-    RoutineExerciseDetailSchema,
     RoutinesSchema,
     RoutineExercisesSchema,
     SubMuscleSchema,

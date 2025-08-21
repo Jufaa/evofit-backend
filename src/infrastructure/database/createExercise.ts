@@ -8,7 +8,7 @@ export const insertData = async () => {
   try {
     await sequelize.authenticate();
     console.log('✅ Connected to database');
-
+    
     // 🔹 Insertar musculos principales
     const muscleGroups = await MainMuscleSchema.bulkCreate(
       [

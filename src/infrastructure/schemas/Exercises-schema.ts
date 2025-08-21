@@ -7,11 +7,9 @@ import {
   AllowNull,
   ForeignKey,
   Model,
-  BelongsToMany,
 } from 'sequelize-typescript';
 import { MainMuscleSchema } from './SubMuscle-schema';
 import { RoutineExercisesSchema } from './RoutinesExercises-schema';
-import { RoutineExerciseDetailSchema } from './RoutineExerciseDetail-schema';
 
 @Table({ tableName: 'exercises', timestamps: false })
 export class ExercisesSchema extends Model {
@@ -32,10 +30,5 @@ export class ExercisesSchema extends Model {
   @Column(DataType.INTEGER)
   declare main_muscle_id?: number;
 
-  @BelongsToMany(() => RoutineExercisesSchema, {
-    through: () => RoutineExerciseDetailSchema,
-    foreignKey: 'exercise_id',
-    otherKey: 'routine_exercise_id',
-  })
   declare routineExercise?: RoutineExercisesSchema[];
 }
